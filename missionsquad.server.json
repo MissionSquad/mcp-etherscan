@@ -1,0 +1,31 @@
+{
+  "name": "etherscan-mcp-server",
+  "transportType": "stdio",
+  "command": "node",
+  "args": ["/opt/etherscan-mcp-server/dist/index.js"],
+  "secretNames": ["apiKey", "baseUrl", "chainId"],
+  "secretFields": [
+    {
+      "name": "apiKey",
+      "label": "Explorer API key",
+      "description": "Etherscan (or compatible explorer) API key. Optional: leave empty for explorers that do not require a key.",
+      "required": false,
+      "inputType": "password"
+    },
+    {
+      "name": "baseUrl",
+      "label": "Explorer API base URL",
+      "description": "API base URL. Defaults to https://api.etherscan.io/v2/api. Set to a standalone explorer endpoint (e.g. a Blockscout /api) to target that explorer directly.",
+      "required": false,
+      "inputType": "password"
+    },
+    {
+      "name": "chainId",
+      "label": "Chain ID",
+      "description": "Chain ID for the Etherscan V2 unified endpoint, e.g. 1 for Ethereum, 8453 for Base, 999 for HyperEVM. Leave empty when pointing baseUrl at a standalone single-chain explorer.",
+      "required": false,
+      "inputType": "password"
+    }
+  ],
+  "enabled": true
+}
